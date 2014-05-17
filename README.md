@@ -1,8 +1,6 @@
 CakePHP - Couchbase Datasource
 =======
 
-[![CakePHP](http://cakephp.org/img/cake-logo.png)](http://www.cakephp.org)
-
 The following is a simple datasource solution for couchbase server 2. This is intended to work with CakePHP 2.x
 
 Background
