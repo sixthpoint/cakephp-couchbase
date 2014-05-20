@@ -65,7 +65,7 @@ Now from your controllers you can use the datasource API
 
 ```php
 
-// Try again to get the cached data based on key, if not assign the data to the key
+// Try to get the cached data based on key, if not assign the data to the key
 $cache = $this->Controller->Get(array($key));
 if ($cache) {
     $this->Controller->Assign(array($key), json_encode($data));
