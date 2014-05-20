@@ -38,27 +38,38 @@ Tell cocuhbase you have a custom datasource in the core/database.php
     );
 ```
 
-Insert / merge the contents of core/config.php into your app. The important line is that the cache has access to the queriesCB object.
-
-```php
-Cache::config('queriesCB', array(
-    'engine' => $engine, //[required]
-    'duration' => '+4 weeks', //[optional]
-    'probability' => 100, //[optional]
-    'password' => '',
-    'prefix' => 'q_', //[optional]  prefix every cache file with this string
-    'servers' => array(
-        '127.0.0.1:11220' // localhost, default port 11211
-    ), //[optional]
-    'compress' => false, // [optional] compress data in Memcache (slower, but uses less memory)
-    'persistent' => false, // [optional] set this to false for non-persistent connections
-    'autoConnect' => false
-));
-```
-
 
 Usage
 ------------
 
 
-todo write
+In the model of your choice specify the name of the couchbase datasource object
+
+```php
+class Sample extends AppModel {
+
+    /**
+     * Name of the model
+     */
+    public $name = 'Sample';
+
+    /**
+     * Database to use
+     */
+    public $useDbConfig = 'defaultCB';
+
+}
+```
+
+Now from your controllers you can use the datasource API
+
+```php
+
+// Try again to get the cached data based on key, if not assign the data to the key
+$cache = $this->Controller->Get(array($key));
+if ($cache) {
+    $this->Controller->Assign(array($key), json_encode($data));
+}
+
+```
+
