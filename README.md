@@ -27,8 +27,8 @@ Tell cocuhbase you have a custom datasource in the core/database.php
 ```php
     public $defaultCB = array(
         'datasource' => 'CouchbaseSource',
-        'username' => 'church',
-        'password' => '',
+        'username' => 'username',
+        'password' => 'password',
         'bucket' => 'yourBucket',
         'prefix' => '',
         'expiry' => '1814400', //3 Weeks
