@@ -201,7 +201,7 @@ Configure::write('Session.timeout', 30);
 Configure::write('Session.cookieTimeout', 1440);
 
 /**
- * The level of CakePHP security. 
+ * The level of CakePHP security.
  */
 Configure::write('Security.level', 'medium');
 
@@ -250,7 +250,7 @@ Configure::write('Acl.classname', 'DbAcl');
 Configure::write('Acl.database', 'default');
 
 /**
- * Uncomment this line and correct your server timezone to fix 
+ * Uncomment this line and correct your server timezone to fix
  * any date & time related errors.
  */
 date_default_timezone_set('US/Central');
@@ -260,7 +260,7 @@ date_default_timezone_set('US/Central');
  * If running via cli - apc is disabled by default. ensure it's available and enabled in this case
  *
  * Note: 'default' and other application caches should be configured in app/Config/bootstrap.php.
- *       Please check the comments in boostrap.php for more info on the cache engines available 
+ *       Please check the comments in boostrap.php for more info on the cache engines available
  *       and their setttings.
  */
 $engine = 'Memcache';
@@ -313,20 +313,4 @@ Cache::config('_cake_model_', array(
     'persistent' => false,
     'probability' => 100,
     'lock' => true,
-));
-
-
-
-Cache::config('queriesCB', array(
-    'engine' => $engine, //[required]
-    'duration' => '+4 weeks', //[optional]
-    'probability' => 100, //[optional]
-    'password' => '',
-    'prefix' => 'q_', //[optional]  prefix every cache file with this string
-    'servers' => array(
-        '127.0.0.1:11220' // localhost, default port 11211
-    ), //[optional]
-    'compress' => false, // [optional] compress data in Memcache (slower, but uses less memory)
-    'persistent' => false, // [optional] set this to false for non-persistent connections
-    'autoConnect' => false
 ));

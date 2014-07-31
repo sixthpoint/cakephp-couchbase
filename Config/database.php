@@ -74,10 +74,9 @@ class DATABASE_CONFIG {
         'database' => 'xxx',
         'prefix' => '',
     );
-
     ////////////////////////////////////////
     // Couchbase Sources
-    ////////////////////////////////////////	
+    ////////////////////////////////////////
 
     public $defaultCB = array(
         'datasource' => 'CouchbaseSource',
@@ -90,5 +89,5 @@ class DATABASE_CONFIG {
         'database' => NULL,
         'persistent' => false
     );
- 
+
 }

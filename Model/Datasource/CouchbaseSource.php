@@ -1,8 +1,12 @@
 <?php
+
 /**
- * Couchbase Datasource class
- * @Author Brandon Klimek
- * 
+ * @author Brandon Klimek <sixthpoint@gmail.com>
+ * @copyright 2012-2013 (c) Brandon Klimek
+ * @license http://www.opensource.org/licenses/mit-license.php The MIT License
+ *
+ * @modified: 8/3/13
+ * @editor: Brandon Klimek
  */
 class CouchbaseSource extends DataSource {
 
@@ -322,8 +326,8 @@ class CouchbaseSource extends DataSource {
     }
 
     /**
-     * Increment the value of an existing numeric key. Couchbase Server stores numbers as unsigned numbers, therefore if 
-     * you try to increment an existing negative number, it will cause an integer overflow and return a non-logical numeric 
+     * Increment the value of an existing numeric key. Couchbase Server stores numbers as unsigned numbers, therefore if
+     * you try to increment an existing negative number, it will cause an integer overflow and return a non-logical numeric
      * result. If a key does not exist, this method will initialize it with the zero or a specified value.
      *
      * @return scalar ( Binary object )
@@ -456,4 +460,3 @@ class CouchbaseSource extends DataSource {
     }
 
 }
-?>

@@ -1,8 +1,9 @@
 <?php
+
 /**
  * This file is loaded automatically by the app/webroot/index.php file after core.php
  *
- * This file should load/create any application wide configuration settings, such as 
+ * This file should load/create any application wide configuration settings, such as
  * Caching, Logging, loading additional configuration files.
  *
  * You should also use this file to include any files that provide global functions/constants
@@ -22,7 +23,6 @@
  * @since         CakePHP(tm) v 0.10.8.2117
  * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
-
 // Setup a 'default' cache configuration for use in the application.
 //Cache::config('default', array('engine' => 'File'));
 
@@ -44,7 +44,6 @@
  * ));
  *
  */
-
 /**
  * Custom Inflector rules, can be set to correctly pluralize or singularize table, model, controller names or whatever other
  * string is passed to the inflection functions
@@ -53,47 +52,38 @@
  * Inflector::rules('plural', array('rules' => array(), 'irregular' => array(), 'uninflected' => array()));
  *
  */
-
 /**
  * Plugins need to be loaded manually, you can either load them one by one or all of them in a single call
  * Uncomment one of the lines below, as you need. make sure you read the documentation on CakePlugin to use more
  * advanced ways of loading plugins
  */
-  
-
 /**
  * Configures default file logging options
  */
 App::uses('CakeLog', 'Log');
 CakeLog::config('debug', array(
-	'engine' => 'FileLog',
-	'types' => array('notice', 'info', 'debug'),
-	'file' => 'debug',
+    'engine' => 'FileLog',
+    'types' => array('notice', 'info', 'debug'),
+    'file' => 'debug',
 ));
 CakeLog::config('error', array(
-	'engine' => 'FileLog',
-	'types' => array('warning', 'error', 'critical', 'alert', 'emergency'),
-	'file' => 'error',
-));
- 
-// Custom configuration for Couchbase error loggin
-CakeLog::config('couchbase', array( 
-    'engine' => 'CouchbaseLog',
-	'types' => array('warning', 'error', 'critical', 'alert', 'emergency'),
+    'engine' => 'FileLog',
+    'types' => array('warning', 'error', 'critical', 'alert', 'emergency'),
+    'file' => 'error',
 ));
 
 
 /* Configure default cache: stays in bootstrap according to developers */
 Cache::config('default', array(
-	'engine' => 'Memcache',
-	'prefix' => Inflector::slug(APP_DIR) . '_',
-	'servers' => array(
-			'127.0.0.1:11211' // localhost, default port 11211
-		), //[optional]
-	'duration' => 7200,
-	'serialize' => false,
-	'persistent' => true, // [optional] set this to false for non-persistent connections
-	'compress' => false,
-	'probability' => 100 
-	)
+    'engine' => 'Memcache',
+    'prefix' => Inflector::slug(APP_DIR) . '_',
+    'servers' => array(
+        '127.0.0.1:11211' // localhost, default port 11211
+    ), //[optional]
+    'duration' => 7200,
+    'serialize' => false,
+    'persistent' => true, // [optional] set this to false for non-persistent connections
+    'compress' => false,
+    'probability' => 100
+        )
 );
